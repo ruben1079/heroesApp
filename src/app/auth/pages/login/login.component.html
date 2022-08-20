@@ -1,0 +1,46 @@
+<mat-grid-list cols="1">
+    <mat-grid-tile>
+        <div fxLayout="column">
+            <h1>Welcome</h1>
+            <button mat-raised-button color="primary" (click)="clicLogin()" >
+                Login with email and password
+            </button>            
+            <br>
+            <br>
+            <div *ngIf="clic">
+                <div class="row">
+                    <div class="col">
+                        <form >
+                            <div>
+                                <label>Correo electrónico</label>
+                                <div>
+                                    <input type="email"
+                                            placeholder="Correo"
+                                            [(ngModel)]="email"
+                                            [ngModelOptions]="{standalone: true}">                    
+                                </div>
+                            </div>
+                            <div>
+                                <label>Password</label>
+                                <div>
+                                    <input type="password"
+                                            placeholder="*******"
+                                            [(ngModel)]="password"
+                                            [ngModelOptions]="{standalone: true}">                    
+                                </div>
+                            </div>
+                            <button (click)="loginemailpass()">Ingresar</button>                                                        
+                            <button (click)="irRegistrarse()">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <button mat-raised-button color="primary" (click)="loginGoogle()">
+                Login with Google
+            </button>
+        </div>
+        
+    </mat-grid-tile>
+</mat-grid-list>
